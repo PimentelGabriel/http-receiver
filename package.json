@@ -1,0 +1,15 @@
+{
+  "name": "web-share",
+  "version": "1.0.0",
+  "description": "Servidor http para recebimento de arquivos via LAN/WLAN",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gabriel Pimentel de Castro Costa",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6"
+  }
+}

@@ -1,15 +1,23 @@
 {
-  "name": "web-share",
-  "version": "1.0.0",
-  "description": "Servidor http para recebimento de arquivos via LAN/WLAN",
-  "main": "main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Gabriel Pimentel de Castro Costa",
-  "license": "MIT",
-  "dependencies": {
-    "express": "^4.18.1",
-    "express-handlebars": "^6.0.6"
-  }
+    "name": "web-share",
+    "version": "1.0.0",
+    "description": "Servidor http para recebimento de arquivos via LAN/WLAN",
+    "main": "main.js",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon main.js"
+    },
+    "author": "Gabriel Pimentel de Castro Costa",
+    "license": "MIT",
+    "dependencies": {
+        "chalk": "^5.0.1",
+        "express": "^4.18.1",
+        "express-handlebars": "^6.0.6",
+        "multer": "^1.4.5-lts.1",
+        "qrcode-terminal": "^0.12.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.20"
+    }
 }

@@ -9,6 +9,8 @@ const app = express();
 app.engine("handlebars", exphbs.engine());
 app.set("view engine", "handlebars");
 
+app.use(express.static("public"))
+
 //Config Multer
 const storage = multer.diskStorage({
     destination: function(req, file, callBack) {
@@ -23,25 +25,23 @@ const upload = multer({ storage });
 
 info();
 
+const params = {
+    metaData: {
+        title: "Web-Box"
+    },
+    user: {
+        id: Math.ceil(Math.random() * 100)
+    }
+}
 
 app.get("/", (req, res) => {
-
-    const params = {
-        metaData: {
-            title: "Web-Box"
-        },
-        user: {
-            id: Math.ceil(Math.random() * 100)
-        }
-    }
-
     return res.render("home", params);
 })
 
-app.post("/uploads/",
-    upload.single("file"),
+app.post("/",
+    upload.fields([{ name: 'files', maxCount: 10 }]),
     (req, res) => {
-        return res.send("Arquivo recebido")
+        return res.render("home", params);
     }
 );
 

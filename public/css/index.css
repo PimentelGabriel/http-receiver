@@ -1,0 +1,129 @@
+:root {
+    /* CSS - Cascading Style Sheet */
+    /* Palette color codes */
+    /* Palette URL: http://paletton.com/#uid=7300u0kqStzgID2lKvstWohxIjf */
+    /* Feel free to copy&paste color codes to your application */
+    /* As hex codes */
+    --color-p0: #1BA55F;
+    /* Main Primary color */
+    --color-primary-1: #5FC692;
+    --color-p2: #38B073;
+    --color-primary-3: #098847;
+    --color-p4: #006C35;
+    --color-s1-0: #1F6A96;
+    /* Main Secondary color (1) */
+    --color-s1-1: #5E98BA;
+    --color-s1-2: #397AA0;
+    --color-s1-3: #0E537B;
+    --color-s1-4: #053F62;
+    --color-s2-0: #EC9326;
+    /* Main Secondary color (2) */
+    --color-s2-1: #FFC37A;
+    --color-s2-2: #FBAE50;
+    --color-s2-3: #C1700C;
+    --color-s2-4: #995400;
+    --color-c0: #EC5526;
+    /* Main Complement color */
+    --color-c1: #FF9A7A;
+    --color-c2: #FB7950;
+    --color-c3: #C1380C;
+    --color-c4: #992500;
+    --bg-color: #F1FFE7;
+}
+
+body {
+    background-color: var(--bg-color);
+    border: 0;
+    margin: 0;
+}
+
+#sec1 {
+    padding-top: 1em;
+    text-align: center;
+}
+
+.btn-group {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+#actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#ctrl {
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#actions .btn {
+    display: block;
+}
+
+#ctrl .btn {
+    display: inline-block;
+}
+
+.btn {
+    flex: 1 1 auto;
+    padding: 0.5em 1em;
+    font-family: sans-serif;
+    font-size: 1em;
+    border: 2px solid black;
+    margin: auto 1em;
+    border-radius: 0.7em;
+    box-shadow: none;
+    text-transform: uppercase;
+    background-color: var(--color-primary-1);
+}
+
+input[type="file"] {
+    display: none;
+}
+
+#msg-out {
+    height: 3em;
+}
+
+table {
+    background-color: var(--color-s1-4);
+    width: 97%;
+    margin: auto 0.3em;
+}
+
+table thead {
+    color: var(--bg-color);
+}
+
+#list-to-send tr {
+    border: var(--color-s1-4);
+}
+
+#list-to-send tr td {
+    padding: 4em auto;
+}
+
+#list-to-send tr:nth-child(2n+1) {
+    background-color: var(--color-c2);
+}
+
+#list-to-send tr:nth-child(2n) {
+    background-color: var(--bg-color);
+}
+
+#list-to-send tr td:nth-child(1) {
+    text-align: left;
+}
+
+#list-to-send tr td:nth-child(2) {
+    text-align: right;
+}
+
+footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    background-color: var(--color-p2);
+}

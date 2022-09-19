@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/css/index.css">
+</head>
+
+<body>
+
+    <section id="sec1">
+
+        <h3>Selecione a música para envio</h3>
+
+        <form enctype="multipart/form-data" action="/" method="post">
+            <div class="btn-group" id="actions">
+                <label class="btn" for="files">Selecionar Arquivos</label>
+
+                <input required multiple type="file" name="files" id="files">
+                <br>
+                <br>
+                <br>
+            </div>
+            <div class="btn-group" id="ctrl">
+                <input class="btn" type="submit" value="Enviar" id="btn-enviar">
+
+                <button class="btn" id="resetForm">
+                        Limpar Seleção
+                    </button>
+            </div>
+
+        </form>
+
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Tamanho</th>
+                </tr>
+            </thead>
+            <tbody id="list-to-send">
+
+            </tbody>
+        </table>
+    </section>
+
+    <script>
+        var table = document.getElementById("list-to-send");
+        var InputFilesElement = document.getElementById("files");
+        var ButtomResetForm = document.getElementById("resetForm");
+
+        ButtomResetForm.addEventListener("click", resetListFiles);
+
+        InputFilesElement.addEventListener("change", (evt) => {
+            updateDate(evt.target);
+        });
+
+        const whatchDog = setInterval(updateData, 2000, document.getElementById("files"));
+
+        function resetListFiles() {
+            InputFilesElement.value = "";
+            table.innerHTML = "";
+        }
+
+        function updateData(inputFiles) {
+            table.innerHTML = "";
+
+            for (i = 0; i < inputFiles.files.length; i++) {
+                let tr = document.createElement("tr");
+
+                let tdNome = document.createElement("td");
+                tdNome.innerText = inputFiles.files[i].name;
+
+                let tdAction = document.createElement("td");
+                tdAction.innerText = inputFiles.files[i].size;
+
+                tr.appendChild(tdNome);
+                tr.appendChild(tdAction);
+
+                table.appendChild(tr);
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>
